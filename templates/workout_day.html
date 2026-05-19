@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Choose Workout Day{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>Select Workout Day</h2>
+  <p class="muted">Choose your completed session type to log the workout details.</p>
+  <div class="day-grid">
+    <a class="day-card" href="{{ url_for('workout_page', workout_type='push') }}">Push Day</a>
+    <a class="day-card" href="{{ url_for('workout_page', workout_type='pull') }}">Pull Day</a>
+    <a class="day-card" href="{{ url_for('workout_page', workout_type='legs') }}">Leg Day</a>
+    <a class="day-card" href="{{ url_for('workout_page', workout_type='core') }}">Core / Abs Day</a>
+    <a class="day-card" href="{{ url_for('workout_page', workout_type='custom') }}">Custom Workout</a>
+  </div>
+</section>
+{% endblock %}

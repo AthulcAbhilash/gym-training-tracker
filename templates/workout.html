@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Log Workout | Workout Tracker{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>Log {{ workout_type.title() }} Session</h2>
+
+  <form id="workoutForm" data-workout-type="{{ workout_type }}">
+    <div class="grid two-col">
+      <label>Date and Time
+        <input type="datetime-local" name="date" id="sessionDate" required />
+      </label>
+      <label>Workout Type
+        <input type="text" value="{{ workout_type.title() }}" disabled />
+      </label>
+    </div>
+
+    <label>Session Notes
+      <textarea name="session_notes" id="sessionNotes" rows="2" placeholder="How did this session feel?"></textarea>
+    </label>
+
+    <div class="section-head">
+      <h3>Exercises</h3>
+      <div class="action-row compact">
+        <button type="button" class="btn" id="addExerciseBtn">Add Exercise</button>
+        <button type="button" class="btn" id="addCardioBtn">Add Cardio</button>
+      </div>
+    </div>
+
+    <div id="exerciseRows" class="exercise-rows"></div>
+
+    <div class="action-row">
+      <button type="submit" class="btn primary">Save Workout</button>
+      <a class="btn" href="{{ url_for('history_page') }}">View History</a>
+      <a class="btn" href="{{ url_for('progress_page') }}">View Progress</a>
+    </div>
+  </form>
+</section>
+
+<section class="card hidden" id="analysisCard">
+  <h3>Post-Workout Analysis</h3>
+  <ul id="analysisInsights" class="list"></ul>
+  <div class="grid two-col">
+    <div>
+      <h4>Under-trained muscle groups</h4>
+      <div id="underTrained" class="chip-wrap"></div>
+    </div>
+    <div>
+      <h4>Over-trained muscle groups</h4>
+      <div id="overTrained" class="chip-wrap"></div>
+    </div>
+  </div>
+  <div>
+    <h4>Optional exercise recommendations</h4>
+    <ul id="optionalRecommendations" class="list"></ul>
+  </div>
+</section>
+{% endblock %}
+{% block script %}
+<script>window.pageInit = initWorkoutPage;</script>
+{% endblock %}

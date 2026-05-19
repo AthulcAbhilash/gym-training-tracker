@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Exercise Management{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>Exercise Management</h2>
+  <p class="muted">Create and manage your personal exercise library.</p>
+
+  <form id="exerciseForm" class="grid two-col">
+    <input type="hidden" id="exerciseId" />
+    <label>Exercise Name<input type="text" id="exerciseName" required /></label>
+    <label>Workout Type
+      <select id="exerciseWorkoutType" required>
+        <option value="push">Push</option>
+        <option value="pull">Pull</option>
+        <option value="legs">Legs</option>
+        <option value="core">Core</option>
+        <option value="custom">Custom</option>
+      </select>
+    </label>
+    <label>Primary Muscle Group<input type="text" id="primaryMuscle" required /></label>
+    <label>Secondary Muscle Groups (comma separated)<input type="text" id="secondaryMuscles" /></label>
+    <label>Machine / Equipment<input type="text" id="equipment" /></label>
+    <label>Default Sets<input type="number" id="defaultSets" min="1" value="3" /></label>
+    <label>Default Reps<input type="number" id="defaultReps" min="1" value="10" /></label>
+    <div class="action-row">
+      <button type="submit" class="btn primary">Save Exercise</button>
+      <button type="button" id="resetExerciseBtn" class="btn">Clear</button>
+    </div>
+  </form>
+</section>
+
+<section class="card">
+  <h3>Saved Exercises</h3>
+  <div id="exerciseList" class="list"></div>
+</section>
+{% endblock %}
+{% block script %}
+<script>window.pageInit = initExercisesPage;</script>
+{% endblock %}

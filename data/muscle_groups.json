@@ -1,0 +1,30 @@
+{
+  "push": {
+    "Chest": ["upper chest", "middle chest", "lower chest"],
+    "Shoulders": ["front deltoid", "side deltoid", "rear deltoid"],
+    "Triceps": ["long head", "lateral head", "medial head"]
+  },
+  "pull": {
+    "Back": ["lats", "traps", "rhomboids", "rear delts", "lower back", "teres major/minor"],
+    "Biceps": ["biceps brachii", "brachialis", "brachioradialis"],
+    "Forearms": ["wrist flexors", "wrist extensors", "grip muscles"]
+  },
+  "legs": {
+    "Glutes": ["gluteus maximus", "gluteus medius", "gluteus minimus"],
+    "Quadriceps": ["quadriceps"],
+    "Hamstrings": ["hamstrings"],
+    "Adductors": ["adductors"],
+    "Abductors": ["abductors"],
+    "Calves": ["gastrocnemius", "soleus"]
+  },
+  "core": {
+    "Upper Abs": ["upper abs"],
+    "Lower Abs": ["lower abs"],
+    "Obliques": ["obliques"],
+    "Transverse Abdominis": ["transverse abdominis"],
+    "Hip Flexors": ["hip flexors"]
+  },
+  "other": {
+    "Other": ["neck", "rotator cuff", "serratus anterior"]
+  }
+}

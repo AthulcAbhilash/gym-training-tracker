@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Progress Tracking{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>Exercise Progress</h2>
+  <div id="progressTable"></div>
+</section>
+
+<section class="card">
+  <h3>Progress Chart</h3>
+  <select id="progressExerciseSelect"></select>
+  <canvas id="progressChart"></canvas>
+</section>
+{% endblock %}
+{% block script %}
+<script>window.pageInit = initProgressPage;</script>
+{% endblock %}

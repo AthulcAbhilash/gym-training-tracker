@@ -1,0 +1,14 @@
+[
+  {
+    "id": "f13f77dc-6ed6-49a5-b1cf-2c1f046c2e5a",
+    "name": "Bench Press",
+    "workout_type": "push",
+    "primary_muscle_group": "Chest",
+    "secondary_muscle_groups": [
+      "Middle Chest"
+    ],
+    "equipment": "Manual Bench Press",
+    "default_sets": 3,
+    "default_reps": 15
+  }
+]

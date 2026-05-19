@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | Workout Tracker{% endblock %}
+{% block content %}
+<section class="grid stats-grid" id="dashboardStats"></section>
+
+<section class="grid two-col">
+  <article class="card">
+    <h3>Weekly Progress Summary</h3>
+    <canvas id="weeklyChart"></canvas>
+  </article>
+  <article class="card">
+    <h3>Push / Pull / Legs / Core Coverage</h3>
+    <div id="coverageCards" class="coverage"></div>
+  </article>
+</section>
+
+<section class="card">
+  <h3>Recent Workout Sessions</h3>
+  <div id="recentSessions" class="list"></div>
+</section>
+{% endblock %}
+{% block script %}
+<script>window.pageInit = initDashboard;</script>
+{% endblock %}

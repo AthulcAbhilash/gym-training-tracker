@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Workout History{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>Workout History</h2>
+  <form id="historyFilters" class="grid two-col">
+    <label>Workout Type
+      <select id="filterWorkoutType">
+        <option value="">All</option>
+        <option value="push">Push</option>
+        <option value="pull">Pull</option>
+        <option value="legs">Legs</option>
+        <option value="core">Core</option>
+        <option value="custom">Custom</option>
+      </select>
+    </label>
+    <label>Muscle Group<input type="text" id="filterMuscleGroup" placeholder="e.g. chest" /></label>
+    <label>Exercise Name<input type="text" id="filterExerciseName" placeholder="e.g. bench" /></label>
+    <label>Start Date<input type="date" id="filterStartDate" /></label>
+    <label>End Date<input type="date" id="filterEndDate" /></label>
+    <div class="action-row">
+      <button type="submit" class="btn primary">Apply Filters</button>
+      <button type="button" class="btn" id="clearFiltersBtn">Clear Filters</button>
+    </div>
+  </form>
+</section>
+
+<section class="card">
+  <h3>Sessions</h3>
+  <div id="historyList" class="list"></div>
+</section>
+{% endblock %}
+{% block script %}
+<script>window.pageInit = initHistoryPage;</script>
+{% endblock %}
